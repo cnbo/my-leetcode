@@ -18,28 +18,30 @@ public int removeElement(int[] nums, int val) {
     int count  = 0;
     int valStartIndex = 0;
     Arrays.sort(nums);
-	
+
     A:for (int i = 0; i < nums.length; i++) {
-	if (val != nums[i]) {
+        if (val != nums[i]) {
 	    continue;
 	}
 	valStartIndex = i;
 	while (i < nums.length) {
 	    if (val == nums[i]) {
-		nums[i] = 0;
-		count++;
-		i++;
-		continue;
-	    }
-	    break A;
+	        count++;
+	        i++;
+	        continue;
+	     }
+	     break A;
 	}
-    }
-	
-    for (int i = valStartIndex + count; i < nums.length; i++) {
+     }
+
+     for (int i = valStartIndex + count; i < nums.length; i++) {
 	nums[i - count] = nums[i];
-	nums[i] = 0;
-    }
-	
-    return count;
+     }
+
+     if (count == 1 && nums.length == 1) {
+	return 0;
+     } else {
+	return nums.length - count;
+     }
 }
 ```
