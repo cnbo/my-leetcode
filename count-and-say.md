@@ -31,7 +31,7 @@ Note: Each term of the sequence of integers will be represented as a string.
 ```
 public class Solucton {
 
-    public static String getCountAndSay(int num) {
+    public String getCountAndSay(int num) {
 	StringBuilder say = new StringBuilder("1");
 	for (int i = 1; i < num; i++) {
 	    StringBuilder temp = new StringBuilder();
