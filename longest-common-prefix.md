@@ -17,7 +17,7 @@ public class Solucton {
 		if (strs[j].startsWith(temp)) {
 		    continue;
 		}
-		sCommonPrefix = false;
+		isCommonPrefix = false;
 		break;
 	    }
 	    if (isCommonPrefix) {
