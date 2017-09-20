@@ -2,7 +2,7 @@
 
 The count-and-say sequence is the sequence of integers with the first five terms as following:
 
->
+> 
 1. 1
 2. 11
 3. 21
@@ -21,12 +21,12 @@ Given an integer n, generate the n<sup>th</sup> term of the count-and-say sequen
 Note: Each term of the sequence of integers will be represented as a string.
 
 **Example 1:**  
->
+> 
 Input: 1  
 Output: "1"
 
 **Example 2:**  
->
+> 
 Input: 5  
 Output: "111221"
 
