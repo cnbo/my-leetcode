@@ -48,7 +48,7 @@ public class Solucton {
 		    k--;
 		    break;
 		}
-		f (j != k) {
+		if (j != k) {
 		    j = k;
 		}
 
