@@ -7,6 +7,9 @@ Write a function to find the longest common prefix string amongst an array of st
 ```
 public class Solucton {
     public String longestCommonPrefix(String[] strs) {
+    	if (strs == null || strs.length == 0) {
+            return "";
+        }
 	String commonLongestPrefix = "";
 	int shortStrIndex = getShortStrIndex(strs);
 	String longestPrefix = strs[shortStrIndex];
