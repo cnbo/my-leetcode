@@ -6,42 +6,39 @@ Write a function to find the longest common prefix string amongst an array of st
 
 ```
 public class Solucton {
-
-	public String longestCommonPrefix(String[] strs) {
-		String commonLongestPrefix = "";
-		int shortStrIndex = getShortStrIndex(strs);
-		String longestPrefix = strs[shortStrIndex];
-		for (int i = longestPrefix.length(); i > 0; i--) {
-			boolean isCommonPrefix = true;
-			String temp = longestPrefix.substring(0, i);
-			for (int j = 0; j < strs.length; j++) {
-				if (strs[j].startsWith(temp)) {
-					continue;
-				}
-				isCommonPrefix = false;
-				break;
-			}
-			if (isCommonPrefix) {
-				commonLongestPrefix = temp;
-				break;
-			}
+    public String longestCommonPrefix(String[] strs) {
+	String commonLongestPrefix = "";
+	int shortStrIndex = getShortStrIndex(strs);
+	String longestPrefix = strs[shortStrIndex];
+	for (int i = longestPrefix.length(); i > 0; i--) {
+	    boolean isCommonPrefix = true;
+	    String temp = longestPrefix.substring(0, i);
+	    for (int j = 0; j < strs.length; j++) {
+		if (strs[j].startsWith(temp)) {
+		    continue;
 		}
-		
-		return commonLongestPrefix;
+		sCommonPrefix = false;
+		break;
+	    }
+	    if (isCommonPrefix) {
+		commonLongestPrefix = temp;
+		break;
+	    }
 	}
+	return commonLongestPrefix;
+    }
 
-	public int getShortStrIndex(String[] strs) {
-		int shortStrIndex = 0;
-		int strLength = strs[0].length();
+    public int getShortStrIndex(String[] strs) {
+	int shortStrIndex = 0;
+	int strLength = strs[0].length();
 		
-		for (int i = 1; i < strs.length; i++) {
-			if (strLength > strs[0].length()) {
-				shortStrIndex = i;
-				strLength = strs[0].length();
-			}
-		}
-		
-		return shortStrIndex;
+	for (int i = 1; i < strs.length; i++) {
+	    if (strLength > strs[0].length()) {
+		shortStrIndex = i;
+		trLength = strs[0].length();
+	    }
 	}
+	return shortStrIndex;
+    }
 }
 ```
