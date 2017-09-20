@@ -35,7 +35,7 @@ public class Solucton {
 	for (int i = 1; i < strs.length; i++) {
 	    if (strLength > strs[0].length()) {
 		shortStrIndex = i;
-		trLength = strs[0].length();
+		strLength = strs[0].length();
 	    }
 	}
 	return shortStrIndex;
