@@ -29,7 +29,7 @@ Note: Each term of the sequence of integers will be represented as a string.
 
 ## 代碼實現
 ```
-public class Solucton {
+public class Soluion {
 
     public String getCountAndSay(int num) {
 	StringBuilder say = new StringBuilder("1");
