@@ -20,13 +20,13 @@ For example, your query should return the following for the above table:
 
 ```
 SELECT 
-    A.EMAIL
+    DISTINCT A.Email
 FROM 
-    PERSON A, 
-    PERSON B, 
+    Person A, 
+    Person B
 WHERE 
-    A.ID <> B.ID 
+    A.Id <> B.Id  
 AND
-    A.EMAIL = B.EMIAL;
+    A.Email = B.Email;
     
 ```
