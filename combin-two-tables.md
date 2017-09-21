@@ -27,10 +27,12 @@ Write a SQL query for a report that provides the following information for each 
 
 ```
 SELECT 
-    FIRSTNAME, LASTNAME, CITY, STATE 
+    FirstName, LastName, City, State 
 FROM 
-    PERSON, ADDRESS 
-WHERE 
-    PERSON.PERSONID = ADDRESS.PERSONID;
+    Person
+LEFT JOIN 
+    Address
+ON 
+    Person.PersonId = Address.PersonId;
     
 ```
