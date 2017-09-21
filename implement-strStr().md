@@ -6,7 +6,7 @@ Returns the index of the first occurrence of needle in haystack, or -1 if needle
 
 ```
 public class Solucton {
-    public static int strStr(String haystack, String needle) {
+    public int strStr(String haystack, String needle) {
         int result = -1;
         if (isEmpty(haystack) || isEmpty(needle) || (haystack.length() < needle.length())) {
             return result;
@@ -27,7 +27,7 @@ public class Solucton {
         return result;
     }
 
-    public static boolean isEmpty(String str) {
+    public boolean isEmpty(String str) {
         return str == null || str.length() == 0;
     }
 }
