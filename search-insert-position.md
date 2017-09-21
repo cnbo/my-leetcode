@@ -13,7 +13,7 @@ Here are few examples.
 ## 代碼實現
 
 ```
-public class Solucton {	
+public class Solution {	
     public int getInsertPosition(int[] nums, int val) {
         if (isEmpty(nums)) {
             return 0;
