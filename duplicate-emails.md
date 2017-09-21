@@ -20,10 +20,10 @@ For example, your query should return the following for the above table:
 
 ```
 SELECT 
-    EMAIL
+    A.EMAIL
 FROM 
     PERSON A, 
-		PERSON B, 
+    PERSON B, 
 WHERE 
     A.ID <> B.ID 
 AND
