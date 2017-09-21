@@ -5,7 +5,7 @@ Write a function to find the longest common prefix string amongst an array of st
 ## 代碼實現
 
 ```
-public class Solucton {
+public class Solution {
     public String longestCommonPrefix(String[] strs) {
     	if (strs == null || strs.length == 0) {
             return "";
