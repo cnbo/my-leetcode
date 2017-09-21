@@ -29,15 +29,15 @@ Using the above tables as example, return the following:
 
 ```
 SELECT 
-    C.NAME 
-FORM 
-    CUSTOMERS C
+    C.Name Customers
+FROM 
+    Customers C
 WHERE 
-    C.ID 
+    C.Id  
 NOT IN 
     (SELECT 
-         CUSTOMERID
+         CustomerId 
      FROM
-         ORDERS);
+         Orders);
          
 ```
