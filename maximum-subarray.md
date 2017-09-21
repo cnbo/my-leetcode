@@ -9,7 +9,7 @@ For example, given the array ``[-2, 1, -3, 4, -1, 2, 1, -5, 4]``, the contiguous
 ```
 public class Solution {	
     public static int maxSubArray(int[] nums) {
-        int maxSum = 0;
+        int maxSum = nums[0];
 
         for (int i = 0; i < nums.length; i++) {
             int tempSum = 0;
