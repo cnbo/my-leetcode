@@ -9,6 +9,9 @@ You may assume that the array is non-empty and the majority element always exist
 ```
 public class Solution {	
     public int majorityElement(int[] nums) {
+        if (nums.length == 1) {
+            return nums[0];
+        }
         int leastCount = nums.length / 2;
         int result = 0;
         Map<Integer, Integer> numsMap = new HashMap<Integer, Integer>();
