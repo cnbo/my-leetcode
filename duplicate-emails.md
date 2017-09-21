@@ -28,4 +28,5 @@ WHERE
     A.ID <> B.ID 
 AND
     A.EMAIL = B.EMIAL;
+    
 ```
