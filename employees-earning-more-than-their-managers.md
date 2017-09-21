@@ -27,4 +27,5 @@ WHERE
     A.MANAGERID = B.ID
 AND 
     A.SALARY > B.SALARY;
+    
 ```
