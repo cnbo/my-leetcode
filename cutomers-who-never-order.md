@@ -36,7 +36,7 @@ WHERE
     C.ID 
 NOT IN 
     (SELECT 
-		     CUSTOMERID
+         CUSTOMERID
      FROM
-		     ORDERS);
+         ORDERS);
 ```
