@@ -11,13 +11,14 @@ Your algorithm should have a linear runtime complexity. Could you implement it w
 public class Solution {	
     public static int getSingleOne(int[] nums) {
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length; i += 2) {
+        for (int i = 0; i < nums.length - 1; i += 2) {
             if (nums[i] < nums[i + 1]) {
                 return nums[i];
             }
         }
 
-        return 0;
+        
+        return nums.length == 1 ? nums[0] : nums[nums.length - 1];
     }
 }
 
