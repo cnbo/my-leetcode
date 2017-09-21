@@ -14,11 +14,11 @@ The digits are stored such that the most significant digit is at the head of the
 
 ```
 public class Solution {	
-    public static void plusOne(int[] nums) {
+    public void plusOne(int[] nums) {
         addOne(nums, nums.length - 1);
     }
 
-    public static void addOne(int[] nums, int index) {
+    public void addOne(int[] nums, int index) {
         if (index == 0 || nums[index] < 9) {
             nums[index]++;
             return;
