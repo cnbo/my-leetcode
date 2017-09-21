@@ -39,4 +39,5 @@ NOT IN
          CUSTOMERID
      FROM
          ORDERS);
+         
 ```
