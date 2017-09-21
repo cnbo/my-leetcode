@@ -8,10 +8,14 @@ Returns the index of the first occurrence of needle in haystack, or -1 if needle
 public class Solution {
     public int strStr(String haystack, String needle) {
         int result = -1;
-        if (isEmpty(haystack) || isEmpty(needle) || (haystack.length() < needle.length())) {
+        if (haystack == null || needle == null || (haystack.length() < needle.length())) {
             return result;
         }   
-
+        
+        if (haystack.length() == 0 && needle.length() == 0) {
+            return 0;
+        }
+        
         int haystackLength = haystack.length();
         for (int i = 0; i < haystackLength; i++) {
             String temp = haystack.substring(i, haystackLength);
@@ -25,10 +29,6 @@ public class Solution {
         }
 	
         return result;
-    }
-
-    public boolean isEmpty(String str) {
-        return str == null || str.length() == 0;
     }
 }
 ```
