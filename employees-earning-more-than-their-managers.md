@@ -19,13 +19,13 @@ Given the ``Employee`` table, write a SQL query that finds out employees who ear
 
 ```
 SELECT 
-    A.NAME 
+    A.Name Employee   
 FROM 
-    EMPLOYEE A,
-    EMPLOYEE B
+    Employee A,
+    Employee B
 WHERE 
-    A.MANAGERID = B.ID
+    A.ManagerId = B.Id
 AND 
-    A.SALARY > B.SALARY;
+    A.Salary > B.Salary;
     
 ```
