@@ -12,14 +12,14 @@ If this function is called many times, how would you optimize it?
 
 ```
 public class Solution {
-    public static int reverseBits(int num) {
+    public int reverseBits(int num) {
         StringBuilder bitsSb = intToBits(num);
         num = bitsToInt(bitsSb);
 
         return num;
     }
 
-    public static int bitsToInt(StringBuilder bits) {
+    public int bitsToInt(StringBuilder bits) {
         double num = 0;
 
         int initExponent = 32 - bits.length();
@@ -31,7 +31,7 @@ public class Solution {
         return (int) num;
     }
 
-    public static StringBuilder intToBits(int num) {
+    public StringBuilder intToBits(int num) {
         StringBuilder sb = null;
 
         int quotient = num / 2;
