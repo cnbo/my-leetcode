@@ -11,6 +11,10 @@ Note that ``1`` is typically treated as an ugly number.
 ```
 public class Solution {
     public static boolean uglyNumber(int num) {
+        if (num == 0) {
+            return false;
+        }
+        
         if (num == 1 || num == 2 || num == 3 || num == 5) {
             return true;
         }
