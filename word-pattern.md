@@ -25,24 +25,25 @@ public class Solution {
             return false;
         } else if (pattern == null) {
             return false;
-        } else if (str.equals(pattern)) {
-            return true;
         }
 
         boolean isPattern = true;
 		
         String[] strs = str.split(" ");
-        A:for (int i = 0; i < pattern.length(); i++) {
+        if (strs.length != pattern.length()) {
+            return false;
+        }
+        for (int i = 0; i < pattern.length() && i < strs.length; i++) {
             char patternChar = pattern.charAt(i);
             String strTemp = strs[i];
-            for (int j = i; j < pattern.length(); j++) {
-            if (patternChar == pattern.charAt(j) && strTemp.equals(strs[j])) {
-                continue;
-            } else if (patternChar != pattern.charAt(j) && !strTemp.equals(strs[j])) {
-                continue;
+            for (int j = i; j < pattern.length() && j < strs.length; j++) {
+                if (patternChar == pattern.charAt(j) && strTemp.equals(strs[j])) {
+                    continue;
+                } else if (patternChar != pattern.charAt(j) && !strTemp.equals(strs[j])) {
+                    continue;
+                }
+                return false;
             }
-            isPattern = false;
-            break A;
         }
 
         return isPattern;
