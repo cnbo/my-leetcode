@@ -23,7 +23,7 @@ n is positive and will fit within the range of a 32-bit signed integer (n < 2<su
 
 ```
 public class Solution {
-    public static int nthDigit(int n) {
+    public int nthDigit(int n) {
         if (n < 10) {
             return n;
         }
@@ -31,7 +31,7 @@ public class Solution {
         int count = 9;
         int digitBits = 2;
 
-        while (n < Integer.MAX_VALUE) {
+        while (count <= n) {
             int start = (int) Math.pow(10, digitBits - 1);
             int end = (int) Math.pow(10, digitBits);
             while (start < end) {
