@@ -15,5 +15,25 @@ Given an array ``nums`` representing the data status of this set after the error
 ## 代碼實現
 
 ```
-
+public class Solution {
+	public int[] setMismatch(int[] nums) {
+		int[] result = new int[2];
+		Arrays.sort(nums);
+		
+		if (nums[0] != 1) {
+			result[1] = 1;
+		}
+		for (int i = 0; i < nums.length - 1; i++) {
+			if (nums[i] == nums[i + 1]) {
+				result[0] = nums[i];
+				continue;
+			}
+			if (nums[i] + 1 < nums[i + 1]) {
+				result[1] = nums[i];
+			}
+		}
+		
+		return result;
+	}
+}
 ```
