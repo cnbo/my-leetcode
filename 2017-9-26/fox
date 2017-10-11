@@ -1,0 +1,84 @@
+import java.io.ByteArrayOutputStream;    
+import java.io.FileInputStream;    
+import java.io.IOException;    
+    
+import org.apache.catalina.loader.WebappClassLoader;    
+    
+/**  
+ * 自定义的classloader  
+ * 可以解密文件并加载  
+ * @author uikoo9  
+ */    
+public class UClassLoader extends WebappClassLoader{    
+        
+    /**  
+     * 默认构造器  
+     */    
+    public UClassLoader() {    
+        super();    
+    }    
+    
+    /**  
+     * 默认构造器  
+     * @param parent  
+     */    
+    public UClassLoader(ClassLoader parent) {    
+        super(parent);    
+    }    
+    
+    /* (non-Javadoc)  
+     * @see org.apache.catalina.loader.WebappClassLoader#findClass(java.lang.String)  
+     */    
+    public Class<?> findClass(String name) throws ClassNotFoundException {    
+        if(name.contains("uikoo9")){    
+            return findClassEncrypt(name);    
+        }else{    
+            return super.findClass(name);    
+        }    
+    }    
+        
+    /**  
+     * 查找class  
+     * @param name  
+     * @return  
+     * @throws ClassNotFoundException  
+     */    
+    private Class<?> findClassEncrypt(String name) throws ClassNotFoundException{    
+        byte[] classBytes = null;    
+        try {    
+            System.out.println("++++++" + name);    
+            classBytes = loadClassBytesEncrypt(name);    
+        } catch (Exception e) {    
+            e.printStackTrace();    
+        }    
+    
+        Class<?> cl = defineClass(name, classBytes, 0, classBytes.length);    
+        if (cl == null)    
+            throw new ClassNotFoundException(name);    
+        return cl;    
+    }    
+        
+    /**  
+     * 加载加密后的class字节流  
+     * @param name  
+     * @return  
+     * @throws IOException  
+     */    
+    private byte[] loadClassBytesEncrypt(String name) throws IOException {    
+        String basepath = "Z:/program/workspaces/_work_03_bzb/WebRoot/WEB-INF/classes/";// 项目物理地址    
+        String cname = basepath + name.replace('.', '/') + ".uikoo9";    
+        System.out.println(cname);    
+        FileInputStream in = new FileInputStream(cname);    
+        try {    
+            ByteArrayOutputStream buffer = new ByteArrayOutputStream();    
+            int ch;    
+            while ((ch = in.read()) != -1) {    
+                buffer.write((byte)(ch - 2));    
+            }    
+            in.close();    
+            return buffer.toByteArray();    
+        } finally {    
+            in.close();    
+        }    
+    }    
+} 
